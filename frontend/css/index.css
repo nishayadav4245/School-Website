@@ -1,0 +1,592 @@
+/* Base Styles */
+/* 1. Make width calculations predictable everywhere */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Kill only the horizontal scroll on the root and force a single vertical scrollbar */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;  /* ensures one smooth vertical scroll */
+  
+}
+
+html::-webkit-scrollbar{
+  display:none;
+}
+/* 3. Leave body fully visible (don’t re‐declare overflow here) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #abd2f4, #838de9);
+  color: #333;
+}
+
+/* Hero Header */
+.hero-header {
+  background: linear-gradient(to right, #004e92, #000428);
+  color: #ffffff;
+  padding: 0.5rem 0.2rem;
+  border-bottom: 3px solid #ffc107;
+  text-align: center;
+}
+
+.header-content h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.header-content .tagline {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  font-weight: 300;
+}
+
+
+#contact {
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+ 
+}
+
+#contact p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#contact a {
+  color: #3b0a89;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+.map-wrapper{
+  background: url('../images/locationbg3.jpg') no-repeat center center / cover;
+}
+
+/* Swiper Gallery */
+.swiper {
+  width: 100%;
+  height: 350px;
+  border-radius: 1.5px;
+  overflow: hidden;
+  padding-top: 0px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.gallery-section .swiper {
+  height: 420px; /* Increase this value to make gallery taller */
+}
+
+.gallery-section .swiper-slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+
+/* Card Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card .icon-bg {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  font-size: 6rem;
+  opacity: 0.1;
+}
+
+.card h3 {
+  margin-top: 0.5rem;
+  color: #3b0a89;
+}
+
+.card p {
+  margin: 0.8rem 0 0;
+  line-height: 1.5;
+}
+
+/* Sections */
+section {
+  background: #d7eaf4;
+  padding: 0.5rem 0.5rem;
+  margin: 0rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding-top: 0rem;
+  margin-top: 0rem;
+  
+}
+
+/* Section Headings */
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 1rem;        /* was 2rem */
+  padding: 0.3rem 0.5rem;   /* was 0.5rem */
+margin-top:0;        
+  color: #eee7f3;
+  background: linear-gradient(to right, #567fa3, #2e3aaa);
+  border-radius: 6px;       /* was 8px */
+}
+
+/* Vision & Mission Section */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.box {
+  flex: 1 1 320px;
+ 
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.box h3 {
+  color: #3b0a89;
+  margin-top: 0;
+}
+
+.box p {
+  margin-top: 0.5rem;
+}
+
+.vision-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.vision-text {
+  position: relative;
+  padding-bottom: 2rem; /* Prevent overlap */
+}
+
+.director-name {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #555;
+}
+
+
+/* Curriculum */
+.curriculum {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  height: 500px;
+}
+
+.curriculum .item {
+padding: 1.8rem;
+  border-radius: 12px;
+ 
+}
+.curriculum .item:nth-child(1) {
+background: url('../images/curriculum3.jpg') no-repeat center center / cover;
+
+}
+.curriculum .item:nth-child(2) {
+ background: url('../images/curriculum1.jpg') no-repeat center center / cover;
+
+}
+
+
+.curriculum .item h3 {
+  color: #3b0a89;
+}
+
+.curriculum .item ul {
+  margin: 0.5rem 0 0 1.2rem;
+}
+
+.curriculum .item li {
+  margin-bottom: 0.5rem;
+}
+
+
+/* Form */
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.85rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color:rgb(161, 161, 243)
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: #5c4ae2; /* lighter blue */
+}
+
+.formbg {
+  background: url('../images/formbg4.jpg') no-repeat center center / cover;
+  height:600px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+form button {
+  background: #3b0a89;
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #ddd;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Embedded Maps */
+iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+/* Feature Card Images */
+.feature-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Floating Button */
+.floating-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.floating-button:hover {
+  background-color: #0056b3;
+}
+
+/* Sticky Navbar */
+.navbar {
+  background-color: #3b0a89;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 0.2rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+  background: white;
+  color: #3b0a89;
+  border-radius: 4px;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.4rem;
+    padding: 1.5rem 0.5rem 0.5rem;
+    scroll-margin-top: 70px;
+  }
+
+  .header-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .header-content .tagline {
+    font-size: 0.8rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .navbar a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .grid,
+  .curriculum {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+ 
+
+  .floating-button {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .navbar ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .navbar li {
+    flex: 0 0 auto;
+  }
+
+  .navbar a {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    display: inline-block;
+  }
+}
+
+
+.navbar ul::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.navbar li {
+  flex: 0 0 auto;
+}
+
+.navbar a {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  display: inline-block;
+}
+
+form .form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+}
+
+/* icons for section */
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 2rem;
+  padding: 0.5rem;
+  color: #eee7f3;
+  background-color: #004e92;
+  border-radius: 8px;
+}
+
+h2 .section-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Navbar Container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* Menu Toggle Button (Hamburger) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3b0a89;
+    width: 100%;
+    padding: 0.5rem 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar li {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}
+/* Ensure the container centers the navbar content */
+.nav-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  position: relative;
+}
+
+/* On large screens, keep nav links centered and horizontal */
+@media (min-width: 769px) {
+  .navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+  }
+
+  .navbar li {
+    flex: 0 0 auto;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .menu-toggle {
+    display: none; /* Hide toggle button on large screens */
+  }
+}
+/* school moto */
+.school-motto {
+  font-size: 1.1rem;
+  color: #ffc107;
+  margin: 0.5rem 0 1rem;
+  font-style: italic;
+  font-weight: 500;
+}
+#gallery-section {
+  margin-top: 0;  /* removes gap from top */
+  padding-top: 0rem; /* optional: still gives breathing room inside */
+}
+
+
+
+

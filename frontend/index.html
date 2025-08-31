@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SD World Inter College</title> <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- SwiperJS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+ 
+<!-- navbar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <ul id="navLinks">
+      <li><a href="#gallery-section">Gallery</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#vision">Vision & Mission</a></li>
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#inquiryForm">Admission</a></li>
+    </ul>
+  </div>
+</nav>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks   = document.getElementById('navLinks');
+
+  // open/close on ☰ click
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // close menu when any link is clicked
+  navLinks.querySelectorAll('a').forEach(link =>
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    })
+  );
+</script>
+
+<header class="hero-header" data-aos="fade-down">
+  <div class="header-wrapper">
+
+    <!-- Center Content -->
+    <div class="header-content">
+      <h1>SD World Inter College</h1>
+      <p class="tagline">Admissions Open for 2025–26 | Nursery to Grade 12</p>
+      
+      <!-- Motto -->
+      <p class="school-motto"><em>“Empowering Minds, Shaping Futures”</em></p>
+
+      <div class="contact-info">
+        <p><strong>📞 Call:</strong> +91 8808501648</p>
+        <p><strong>✉ Email:</strong> yadavmansharam25@gmail.com</p>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+  <!-- Gallery -->
+  <section  id="gallery-section"  class="gallery-section" data-aos="zoom-in">
+<h2><img src="images/photo-gallery.gif" alt="Gallery Icon" class="section-icon"> School Gallery</h2>
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/school1.jpeg" alt="Campus View 1"></div>
+        <div class="swiper-slide"><img src="images/school2.jpeg" alt="Campus View 2"></div>
+        <div class="swiper-slide"><img src="images/logo2.jpg" alt="Annual Event"></div>
+        <div class="swiper-slide"><img src="images/school4.jpeg" alt="Annual Event"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section> 
+  <!-- Our Features -->
+  <section id="features"  data-aos="fade-up">
+   <h2>
+  <img src="images/features.gif" alt="Features Icon" class="section-icon" />
+  Our Features
+</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <img src="images/logo8.jpg" alt="Teachers" class="feature-img" />
+        <div class="icon-bg">👩‍🏫</div>
+        <h3>Certificated Teachers</h3>
+        <p>Highly qualified educators designing age-appropriate, interactive lessons.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/logo7.jpg" alt="Play Room" class="feature-img" />
+        <div class="icon-bg">🎨</div>
+        <h3>Play Room</h3>
+        <p>A colorful, safe space filled with creative toys and learning stations.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/logo6.jpg" alt="Class Programs" class="feature-img" />
+        <div class="icon-bg">📚</div>
+        <h3>Class Programs</h3>
+        <p>Diverse curricula covering academics, arts, sports, and life skills.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/logo5.jpg" alt="Playground" class="feature-img" />
+        <div class="icon-bg">🏞️</div>
+        <h3>Green Playground</h3>
+        <p>Lush, open grounds for sports, games, and eco-friendly learning.</p>
+      </div>
+
+        <div class="card">
+      <img src="images/execellence.jpg" alt="Excellence in Education" class="feature-img" />
+      <div class="icon-bg">🏆</div>
+      <h3>Excellence in Education</h3>
+      <p>Commitment to academic excellence, holistic development, and future-ready skills.</p>
+    </div>
+  </section>
+   <!-- Our Benefits -->
+  <section id="benefits" data-aos="fade-right">
+<h2>
+  <img src="images/growth.gif" alt="Benefits Icon" class="section-icon" />
+  Our Benefits
+</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/logo9.jpg" alt="Classroom" /></div>
+        <div class="swiper-slide"><img src="images/logo10.jpg" alt="Classroom" /></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="icon-bg">✔️</div>
+    <h3>Large Class Sizes & Small Batch Strength</h3>
+  </div>
+
+  <div class="card">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/logo11.jpg" alt="Happy Environment" /></div>
+        <div class="swiper-slide"><img src="images/11_1.jpg" alt="Happy Students" /></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="icon-bg">✔️</div>
+    <h3>Loving Atmosphere</h3>
+  </div>
+
+  <div class="card">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/logo12.jpg" alt="Plans" /></div>
+        <div class="swiper-slide"><img src="images/logo12.1.jpg" alt="Schedules" /></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="icon-bg">✔️</div>
+    <h3>Top Education Plans</h3>
+  </div>
+
+  <div class="card">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/school1.jpeg" alt="Campus" /></div>
+        <div class="swiper-slide"><img src="images/school5.jpeg" alt="Nature" /></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="icon-bg">✔️</div>
+    <h3>Beautiful Campus</h3>
+  </div>
+
+  <div class="card">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/logo14.jpg" alt="Study Room" /></div>
+        <div class="swiper-slide"><img src="images/logo14_1.jpg" alt="Books" /></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="icon-bg">✔️</div>
+    <h3>Resourceful Study Rooms</h3>
+  </div>
+
+</div>
+
+  </section > 
+  <!-- Vision & Mission -->
+<section id="vision" data-aos="fade-left">
+  <h2>
+    <img src="images/strategy.gif" alt="Vision Icon" class="section-icon" />
+    Vision & Mission
+  </h2>
+
+  <div class="flex">
+    <!-- Vision Box -->
+    <div class="box">
+      <img src="./images/vision.jpg" alt="Vision" class="vision-img" />
+      <h3>Our Vision</h3>
+      <div class="vision-text">
+        <p>To nurture future-ready citizens through holistic education and ethical values.</p>
+        <div class="director-name">— Director, Mr. M R Yadav</div>
+      </div>
+    </div>
+
+    <!-- Mission Box -->
+    <div class="box">
+      <img src="./images/mission.jpg" alt="Mission" class="vision-img" />
+      <h3>Our Mission</h3>
+      <div class="vision-text">
+        <p>To foster a safe, inclusive, and stimulating environment for intellectual and personal growth.</p>
+        <div class="director-name">— Principal, Mrs. Nidhi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- Curriculum & Activities -->
+  <section id="curriculum" data-aos="fade-up">
+   <h2>
+  <img src="images/extracurricular-activities.gif" alt="curriculum Icon" class="section-icon" />
+  Curriculum & Activities
+</h2>
+
+    <div class="curriculum">
+      <div class="item">
+        <h3>CBSE Curriculum</h3>
+        <ul>
+          <li>English, Hindi, Mathematics, Science</li>
+          <li>Social Studies & Arts</li>
+          <li>Yoga & Computer Science</li>
+          <li>Sports & Value Education</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>Co-Curricular Fun</h3>
+        <ul>
+          <li>Debates & Elocution</li>
+          <li>Music, Dance & Drama</li>
+          <li>Cultural Events & Clubs</li>
+          <li>House Competitions & Field Trips</li>
+        </ul>
+      </div>
+    </div>
+  </section >
+  <!-- contact -->
+ <section id="contact" data-aos="fade-up">
+  <h2>
+    <img src="images/maps.gif" alt="Contact Icon" class="section-icon" />
+    Contact & Location
+  </h2>
+
+  <p><strong>Address:</strong> Near Jhingha pul, Private bus Stand ( North Side) , Mohammad Nagar, Bahraich, 271801, Uttar Pradesh</p>
+  <p><strong>Call:</strong> +91 8808501648 | +91 87952 43450</p>
+ <p>
+  <strong>Email:</strong>
+  <a href="mailto:yadavmansharam25@gmail.com">yadavmansharam25@gmail.com</a>
+</p>
+
+  <div class="map-wrapper" style="width:100%; height:400px; margin-top:1rem; border:2px solid #ccc; border-radius:8px; overflow:hidden;">
+    <iframe
+      src="https://www.google.com/maps?q=27.5891240,81.5854560&output=embed"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      style="border:0;"
+      allowfullscreen
+      aria-hidden="false"
+      tabindex="0">
+    </iframe>
+  </div>
+</section>
+<!-- Inquiry Form -->
+  <section data-aos="fade-up">
+    <div class="formbg">
+   <h2>
+  <img src="images/id.gif" alt="Admission Icon" class="section-icon" />
+  Admission Inquiry Form
+</h2>
+
+   <form id="inquiryForm">
+  <div class="form-container">
+    <input name="student" placeholder="👤 Student's Full Name" required>
+    <input name="parent" placeholder="👥 Parent/Guardian Name" required>
+    <input name="contact" type="tel" placeholder="📞 Contact Number" required>
+    <input name="email" type="email" placeholder="✉️ Email Address" required>
+    <textarea name="message" placeholder="📋 Class Applying For / Message" required></textarea>
+    <button type="submit">✨ Submit Inquiry</button>
+  </div>
+</form>
+</div>
+  </section>
+  <footer>
+    <p>&copy; 2025 SD World Inter College | Made with ❤️ & 🌟</p>
+  </footer> <!-- AOS & Swiper Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 800, once: true }); </script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', { loop: true, pagination: { el: '.swiper-pagination' }, autoplay: { delay: 3500 } });
+    document.getElementById('inquiryForm').addEventListener('submit', async function (e) {
+      e.preventDefault(); const data = Object.fromEntries(new FormData(this));
+      const res = await fetch('http://localhost:5000/api/inquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      if (res.ok) { alert('🙏 Thank you! We will reach out soon.'); this.reset(); } else alert('❌ Submission failed.');
+    });
+  </script>
+ <a href="#inquiryForm" class="floating-button" title="Admission Form">
+  📝 Admission
+</a>
+
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - Admission Inquiries</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #3b0a89;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #3b0a89;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .refresh-btn {
+      background-color: #3b0a89;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .delete-btn {
+      background-color: #e53935;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Admission Inquiries - Admin Panel</h1>
+
+<button class="refresh-btn" onclick="loadInquiries()">🔄 Refresh</button>
+
+<table id="inquiryTable">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Parent Name</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Message</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Data rows will be inserted here -->
+  </tbody>
+</table>
+
+<script>
+  async function loadInquiries() {
+    try {
+      const res = await fetch('http://localhost:5000/api/inquiries');
+      const data = await res.json();
+
+      const tableBody = document.getElementById("inquiryTable").querySelector("tbody");
+      tableBody.innerHTML = "";
+
+      data.forEach(inquiry => {
+        const row = `<tr>
+          <td>${inquiry.student}</td>
+          <td>${inquiry.parent}</td>
+          <td>${inquiry.contact}</td>
+          <td>${inquiry.email}</td>
+          <td>${inquiry.message}</td>
+          <td>
+            <button class="delete-btn" onclick="deleteInquiry('${inquiry._id}')">🗑️ Delete</button>
+          </td>
+        </tr>`;
+        tableBody.insertAdjacentHTML('beforeend', row);
+      });
+    } catch (err) {
+      console.error("Error loading inquiries:", err);
+      alert("Failed to load inquiries. Check if the server is running.");
+    }
+  }
+
+  async function deleteInquiry(id) {
+    if (!confirm("Are you sure you want to delete this inquiry?")) return;
+
+    try {
+      const res = await fetch(`http://localhost:5000/api/inquiry/${id}`, {
+        method: 'DELETE',
+      });
+      const result = await res.json();
+      if (result.success) {
+        alert("Inquiry deleted successfully.");
+        loadInquiries();
+      } else {
+        alert("Failed to delete inquiry.");
+      }
+    } catch (err) {
+      console.error("Delete failed:", err);
+      alert("Error deleting inquiry.");
+    }
+  }
+
+  window.onload = loadInquiries;
+</script>
+
+</body>
+</html>
