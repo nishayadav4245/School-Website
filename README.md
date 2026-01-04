@@ -5,7 +5,7 @@ A simple full-stack project for SD World Inter College admissions:
 - Node.js/Express backend with MongoDB (via Mongoose) to store and manage inquiries.
 
 ### Tech Stack
-- Frontend: Vanilla HTML/CSS/JS
+- Frontend: Vanilla HTML/CSS/JS/React
 - Backend: Node.js, Express, Mongoose, CORS, body-parser
 - Database: MongoDB (Atlas or local)
 
