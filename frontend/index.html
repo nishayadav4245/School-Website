@@ -25,6 +25,7 @@
       <li><a href="#benefits">Benefits</a></li>
       <li><a href="#vision">Vision & Mission</a></li>
       <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#documents">Documents & Certificates</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#inquiryForm">Admission</a></li>
     </ul>
@@ -255,7 +256,34 @@
         </ul>
       </div>
     </div>
-  </section >
+  </section>
+
+  <!-- Documents & Certificates -->
+  <section id="documents" data-aos="fade-up">
+    <h2>Documents & Certificates</h2>
+    <p class="documents-intro">Select a document from the list to view or download the PDF.</p>
+
+    <div class="documents-panel">
+      <label for="documentSelect" class="documents-label">Choose a document</label>
+      <select id="documentSelect" class="document-select" aria-label="Select a document or certificate">
+        <option value="" selected disabled>-- Select Document --</option>
+        <option value="images/Academiccalander.pdf">Academic Calendar</option>
+        <option value="images/buildingCertificate.pdf">Building Certificate</option>
+        <option value="images/fireCertificate.pdf">Fire Certificate</option>
+        <option value="images/List_Of_SMC.pdf">List of SMC</option>
+        <option value="images/recognitionCertificate.pdf">Recognition Certificate</option>
+        <option value="images/trustcertificate.pdf">Trust Certificate</option>
+        <option value="images/list_of_pta.pdf">List of PTA</option>
+        <option value="images/FeeStructure.pdf">Fee Structure</option>
+      </select>
+
+      <div class="document-actions" id="documentActions" hidden>
+        <a id="viewPdfBtn" class="doc-btn doc-btn-view" href="#" target="_blank" rel="noopener noreferrer">View PDF</a>
+        <a id="downloadPdfBtn" class="doc-btn doc-btn-download" href="#" download>Download PDF</a>
+      </div>
+    </div>
+  </section>
+
   <!-- contact -->
  <section id="contact" data-aos="fade-up">
   <h2>
@@ -315,6 +343,24 @@
       e.preventDefault(); const data = Object.fromEntries(new FormData(this));
       const res = await fetch('http://localhost:5000/api/inquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
       if (res.ok) { alert('🙏 Thank you! We will reach out soon.'); this.reset(); } else alert('❌ Submission failed.');
+    });
+
+    const documentSelect = document.getElementById('documentSelect');
+    const documentActions = document.getElementById('documentActions');
+    const viewPdfBtn = document.getElementById('viewPdfBtn');
+    const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+
+    documentSelect.addEventListener('change', function () {
+      const filePath = this.value;
+      if (!filePath) {
+        documentActions.hidden = true;
+        return;
+      }
+      const fileName = filePath.split('/').pop();
+      viewPdfBtn.href = filePath;
+      downloadPdfBtn.href = filePath;
+      downloadPdfBtn.setAttribute('download', fileName);
+      documentActions.hidden = false;
     });
   </script>
  <a href="#inquiryForm" class="floating-button" title="Admission Form">
